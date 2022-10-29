@@ -1,0 +1,11 @@
+@import 'base.scss';
+@import 'mixin.scss';
+
+
+header {
+  padding: rem(10);
+
+  h1 {
+    color: $green;
+  }
+}

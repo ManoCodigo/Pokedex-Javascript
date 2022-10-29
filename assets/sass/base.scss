@@ -1,0 +1,26 @@
+
+$secondary-color: #20c997;
+$text-color-gray: #777;
+
+$white: #fff;
+$green: #49d0b0;
+
+$pokemon-number-degra: rgba(0, 0, 0, 0.3);
+$pokemon-number: #fff;
+
+$bg-color: #000;
+$bg-color-hover-force: rgba(255, 255, 255, 0.021);
+
+$container-width: 1170px;
+
+$radius: 10px;
+
+* {
+  font-family: 'Comfortaa', cursive;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  transition: 0.4s;
+}
