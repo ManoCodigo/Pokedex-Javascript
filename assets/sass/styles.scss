@@ -4,8 +4,78 @@
 
 header {
   padding: rem(10);
+  @include container;
 
   h1 {
     color: $green;
+  }
+}
+
+section {
+  @include container;
+
+  .pokemons {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: rem(15);
+
+    @include responsive-min(420px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include responsive-min(1024px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    &__card {
+      background-color: $green;
+      border-radius: $radius;
+      padding: rem(15);
+
+      &__name {
+        @include flex-box;
+        justify-content: space-between;
+        height: rem(40);
+        margin-bottom: rem(5);
+
+        h2 {
+          color: $white;
+          font-size: rem(22);
+          align-self: flex-end;
+        }
+
+        p {
+          font-size: rem(12);
+        }
+      }
+
+      &__details {
+        @include flex-box;
+        justify-content: space-between;
+        align-items: center;
+
+        div {
+          p {
+            font-size: rem(13);
+            color: $white;
+            background-color: rgba(255, 255, 255, 0.3);
+            padding: rem(5) rem(8);
+            margin-bottom: rem(5);
+            border-radius: $radius + 5;
+
+            @include responsive-min(420px) {
+              font-size: rem(12);
+            }
+            @include responsive-min(750px) {
+              font-size: rem(18);
+            }
+          }
+        }
+
+        img {
+          width: 40%;
+        }
+      }
+    }
   }
 }

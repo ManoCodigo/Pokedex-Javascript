@@ -31,8 +31,9 @@
   @return #{$value}rem;
 }
 
-@mixin responsive($width) {
-  @media(max-width: $width) {
+@mixin responsive-min($width) {
+  @media(min-width: $width) {
     @content
   }
 }
+
