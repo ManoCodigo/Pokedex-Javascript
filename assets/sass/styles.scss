@@ -19,21 +19,21 @@ section {
     grid-template-columns: 1fr;
     gap: rem(15);
 
-    @include responsive-min(420px) {
+    @include responsive-min(445px) {
       grid-template-columns: 1fr 1fr;
     }
-
     @include responsive-min(1024px) {
       grid-template-columns: 1fr 1fr 1fr;
     }
 
     &__card {
-      background-color: $green;
+      background-color: rgb(207, 207, 207);
       border-radius: $radius;
       padding: rem(15);
 
       &__name {
         @include flex-box;
+        align-items: flex-start;
         justify-content: space-between;
         height: rem(40);
         margin-bottom: rem(5);
@@ -42,6 +42,7 @@ section {
           color: $white;
           font-size: rem(22);
           align-self: flex-end;
+          text-transform: capitalize;
         }
 
         p {
@@ -52,14 +53,17 @@ section {
       &__details {
         @include flex-box;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
 
         div {
+          margin-top: rem(15);
+
           p {
+            
             font-size: rem(13);
             color: $white;
             background-color: rgba(255, 255, 255, 0.3);
-            padding: rem(5) rem(8);
+            padding: rem(5) rem(12);
             margin-bottom: rem(5);
             border-radius: $radius + 5;
 
@@ -76,6 +80,60 @@ section {
           width: 40%;
         }
       }
+    }
+    .normal {
+      background-color: $normal;
+    }
+    .fire {
+      background-color: $fire;
+    }
+    .water {
+      background-color: $water;
+    }
+    .grass {
+      background-color: $grass;
+    }
+    .eletric {
+      background-color: $eletric;
+    }
+    .ice {
+      background-color: $ice;
+    }
+    .ground {
+      background-color: $ground;
+    }
+    .flying {
+      background-color: $flying;
+    }
+    .poison {
+      background-color: $poison;
+    }
+    .fighting {
+      background-color: $fighting;
+    }
+    .psychic {
+      background-color: $psychic;
+    }
+    .dark {
+      background-color: $dark;
+    }
+    .rock {
+      background-color: $rock;
+    }
+    .bug {
+      background-color: $bug;
+    }
+    .ghost {
+      background-color: $ghost;
+    }
+    .steel {
+      background-color: $steel;
+    }
+    .dragon {
+      background-color: $dragon;
+    }
+    .fairy {
+      background-color: $fairy;
     }
   }
 }

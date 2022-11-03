@@ -1,4 +1,4 @@
-
+// PRINCIPAIS CORES
 $secondary-color: #20c997;
 $text-color-gray: #777;
 
@@ -8,9 +8,27 @@ $green: #49d0b0;
 $pokemon-number-degra: rgba(0, 0, 0, 0.3);
 $pokemon-number: #fff;
 
-$bg-color: #000;
-$bg-color-hover-force: rgba(255, 255, 255, 0.021);
+// CORES DOS TIPOES DE POKEMONS
+$normal: #A8A878;
+$fire: #F08030;
+$water: #6890F0;
+$grass: #78C850;
+$eletric: #F8D030;
+$ice: #98D8D8;
+$ground: #E0C068;
+$flying: #A890F0;
+$poison: #A040A0;
+$fighting: #C03028;
+$psychic: #F85888;
+$dark: #705848;
+$rock: #B8A038;
+$bug: #A8B820;
+$ghost: #705898;
+$steel: #B8B8D0;
+$dragon: #7038F8;
+$fairy: #FFAEC9;
 
+// OUTROS
 $container-width: 1170px;
 
 $radius: 10px;
@@ -23,4 +41,59 @@ $radius: 10px;
   list-style: none;
   text-decoration: none;
   transition: 0.4s;
+}
+
+.normal {
+  background-color: $normal;
+}
+.fire {
+  background-color: $fire;
+}
+.water {
+  background-color: $water;
+}
+.grass {
+  background-color: $grass;
+}
+.eletric {
+  background-color: $eletric;
+}
+.ice {
+  background-color: $ice;
+}
+.ground {
+  background-color: $ground;
+}
+.flying {
+  background-color: $flying;
+}
+.poison {
+  background-color: $poison;
+}
+.fighting {
+  background-color: $fighting;
+}
+.psychic {
+  background-color: $psychic;
+}
+.dark {
+  background-color: $dark;
+}
+.rock {
+  background-color: $rock;
+}
+.bug {
+  background-color: $bug;
+}
+.ghost {
+  background-color: $ghost;
+}
+.steel {
+  background-color: $steel;
+}
+.dragon {
+  background-color: $dragon;
+}
+.fairy {
+  background-color: $fairy;
 }
