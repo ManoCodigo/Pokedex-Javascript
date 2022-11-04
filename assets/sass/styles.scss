@@ -4,10 +4,24 @@
 
 header {
   padding: rem(10);
-  @include container;
+  background-color: $back-gray;
+  border-radius: 0 0 rem(10) rem(10);
+  
+  section {
+    @include container;
+    @include flex-box;
+    
+    img {
+      width: 50px;
+      height: 50px;
+      margin: rem(5);
+      transform: translateY(-3px);
+    }
 
-  h1 {
-    color: $green;
+    h1 {
+      color: $white;
+    }
+
   }
 }
 
@@ -19,7 +33,7 @@ section {
     grid-template-columns: 1fr;
     gap: rem(15);
 
-    @include responsive-min(445px) {
+    @include responsive-min(750px) {
       grid-template-columns: 1fr 1fr;
     }
     @include responsive-min(1024px) {
@@ -27,9 +41,41 @@ section {
     }
 
     &__card {
+      height: rem(245);
       background-color: rgb(207, 207, 207);
       border-radius: $radius;
       padding: rem(15);
+      position: relative;
+      overflow: hidden;
+
+      @include responsive-min(450px) {
+        padding: rem(25);
+        height: rem(390);
+      }
+      
+      @include responsive-min(750px) {
+        height: rem(280);
+      }
+      
+      @include responsive-min(1024px) {
+        height: rem(230);
+      }
+      &:hover {
+        transform: translateY(-2px);
+        cursor: pointer;
+        
+        .pokemons__card__details__poke-img {
+          transform: translateY(-10px) scale(1.1);
+        }
+        
+        .pokemons__card__img {
+          transform: translateY(-5px) translateX(-5px) scale(1.2) rotate(-15deg); 
+        }
+
+        p, h2 {
+          transform: translateY(-2px);
+        }
+      }
 
       &__name {
         @include flex-box;
@@ -40,13 +86,28 @@ section {
 
         h2 {
           color: $white;
-          font-size: rem(22);
+          font-size: rem(32);
           align-self: flex-end;
           text-transform: capitalize;
+
+          @include responsive-min(450px) {
+            font-size: rem(40);
+          }
+          @include responsive-min(1024px) {
+            font-size: rem(27);
+          }
         }
 
         p {
-          font-size: rem(12);
+          font-size: rem(19);
+          color: $pokemon-number-degra;
+
+          @include responsive-min(450px) {
+            font-size: rem(25);
+          }
+          @include responsive-min(1024px) {
+            font-size: rem(19);
+          }
         }
       }
 
@@ -57,28 +118,42 @@ section {
 
         div {
           margin-top: rem(15);
+          z-index: 1;
 
           p {
-            
-            font-size: rem(13);
+            font-size: rem(20);
             color: $white;
             background-color: rgba(255, 255, 255, 0.3);
             padding: rem(5) rem(12);
             margin-bottom: rem(5);
             border-radius: $radius + 5;
+            z-index: 1;
 
-            @include responsive-min(420px) {
-              font-size: rem(12);
+            @include responsive-min(450px) {
+              font-size: rem(28);
             }
-            @include responsive-min(750px) {
+            @include responsive-min(1024px) {
               font-size: rem(18);
             }
           }
         }
 
-        img {
-          width: 40%;
+        &__poke-img {
+          width: 30%;
+          position: absolute;
+          right: rem(35); 
+          bottom: rem(10); 
+          z-index: 1;
         }
+      }
+
+      &__img {
+        width: 50%;
+        position: absolute;
+        bottom: rem(-30);
+        right: rem(-30);
+        opacity: 0.3;
+        transform: rotate(15deg);
       }
     }
     .normal {
@@ -93,8 +168,8 @@ section {
     .grass {
       background-color: $grass;
     }
-    .eletric {
-      background-color: $eletric;
+    .electric {
+      background-color: $electric;
     }
     .ice {
       background-color: $ice;
@@ -135,5 +210,41 @@ section {
     .fairy {
       background-color: $fairy;
     }
+  }
+
+  .pagination {
+    text-align: center;
+    padding-top: rem(30);
+
+    button {
+      color: white;
+      background-color: $back-gray;
+      padding: rem(15) rem(25);
+      border-radius: rem(10);
+      border: none;
+
+      &:hover {
+        cursor: pointer;
+        transform: translateY(-2px);
+      }
+
+    }
+  }
+}
+
+
+footer {
+  text-align: center;
+  padding: rem(20) 0;
+  background-color: $back-gray;
+  border-radius: rem(10) rem(10) 0 0;
+
+  p {
+    color: $white;
+  }
+
+  a {
+    color: $white;
+    font-size: rem(20);
   }
 }

@@ -8,78 +8,6 @@
   transition: 0.4s;
 }
 
-.normal {
-  background-color: #A8A878;
-}
-
-.fire {
-  background-color: #F08030;
-}
-
-.water {
-  background-color: #6890F0;
-}
-
-.grass {
-  background-color: #78C850;
-}
-
-.eletric {
-  background-color: #F8D030;
-}
-
-.ice {
-  background-color: #98D8D8;
-}
-
-.ground {
-  background-color: #E0C068;
-}
-
-.flying {
-  background-color: #A890F0;
-}
-
-.poison {
-  background-color: #A040A0;
-}
-
-.fighting {
-  background-color: #C03028;
-}
-
-.psychic {
-  background-color: #F85888;
-}
-
-.dark {
-  background-color: #705848;
-}
-
-.rock {
-  background-color: #B8A038;
-}
-
-.bug {
-  background-color: #A8B820;
-}
-
-.ghost {
-  background-color: #705898;
-}
-
-.steel {
-  background-color: #B8B8D0;
-}
-
-.dragon {
-  background-color: #7038F8;
-}
-
-.fairy {
-  background-color: #FFAEC9;
-}
-
 * {
   font-family: "Comfortaa", cursive;
   margin: 0;
@@ -90,86 +18,27 @@
   transition: 0.4s;
 }
 
-.normal {
-  background-color: #A8A878;
-}
-
-.fire {
-  background-color: #F08030;
-}
-
-.water {
-  background-color: #6890F0;
-}
-
-.grass {
-  background-color: #78C850;
-}
-
-.eletric {
-  background-color: #F8D030;
-}
-
-.ice {
-  background-color: #98D8D8;
-}
-
-.ground {
-  background-color: #E0C068;
-}
-
-.flying {
-  background-color: #A890F0;
-}
-
-.poison {
-  background-color: #A040A0;
-}
-
-.fighting {
-  background-color: #C03028;
-}
-
-.psychic {
-  background-color: #F85888;
-}
-
-.dark {
-  background-color: #705848;
-}
-
-.rock {
-  background-color: #B8A038;
-}
-
-.bug {
-  background-color: #A8B820;
-}
-
-.ghost {
-  background-color: #705898;
-}
-
-.steel {
-  background-color: #B8B8D0;
-}
-
-.dragon {
-  background-color: #7038F8;
-}
-
-.fairy {
-  background-color: #FFAEC9;
-}
-
 header {
   padding: 0.625rem;
+  background-color: rgb(29, 29, 29);
+  border-radius: 0 0 0.625rem 0.625rem;
+}
+header section {
   max-width: 1170px;
   padding: 1.5rem 1.2rem;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-header h1 {
-  color: #49d0b0;
+header section img {
+  width: 50px;
+  height: 50px;
+  margin: 0.3125rem;
+  transform: translateY(-3px);
+}
+header section h1 {
+  color: #fff;
 }
 
 section {
@@ -182,7 +51,7 @@ section .pokemons {
   grid-template-columns: 1fr;
   gap: 0.9375rem;
 }
-@media (min-width: 445px) {
+@media (min-width: 750px) {
   section .pokemons {
     grid-template-columns: 1fr 1fr;
   }
@@ -193,9 +62,41 @@ section .pokemons {
   }
 }
 section .pokemons__card {
+  height: 15.3125rem;
   background-color: rgb(207, 207, 207);
   border-radius: 10px;
   padding: 0.9375rem;
+  position: relative;
+  overflow: hidden;
+}
+@media (min-width: 450px) {
+  section .pokemons__card {
+    padding: 1.5625rem;
+    height: 24.375rem;
+  }
+}
+@media (min-width: 750px) {
+  section .pokemons__card {
+    height: 17.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  section .pokemons__card {
+    height: 14.375rem;
+  }
+}
+section .pokemons__card:hover {
+  transform: translateY(-2px);
+  cursor: pointer;
+}
+section .pokemons__card:hover .pokemons__card__details__poke-img {
+  transform: translateY(-10px) scale(1.1);
+}
+section .pokemons__card:hover .pokemons__card__img {
+  transform: translateY(-5px) translateX(-5px) scale(1.2) rotate(-15deg);
+}
+section .pokemons__card:hover p, section .pokemons__card:hover h2 {
+  transform: translateY(-2px);
 }
 section .pokemons__card__name {
   display: flex;
@@ -208,12 +109,33 @@ section .pokemons__card__name {
 }
 section .pokemons__card__name h2 {
   color: #fff;
-  font-size: 1.375rem;
+  font-size: 2rem;
   align-self: flex-end;
   text-transform: capitalize;
 }
+@media (min-width: 450px) {
+  section .pokemons__card__name h2 {
+    font-size: 2.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  section .pokemons__card__name h2 {
+    font-size: 1.6875rem;
+  }
+}
 section .pokemons__card__name p {
-  font-size: 0.75rem;
+  font-size: 1.1875rem;
+  color: rgba(0, 0, 0, 0.3);
+}
+@media (min-width: 450px) {
+  section .pokemons__card__name p {
+    font-size: 1.5625rem;
+  }
+}
+@media (min-width: 1024px) {
+  section .pokemons__card__name p {
+    font-size: 1.1875rem;
+  }
 }
 section .pokemons__card__details {
   display: flex;
@@ -224,27 +146,41 @@ section .pokemons__card__details {
 }
 section .pokemons__card__details div {
   margin-top: 0.9375rem;
+  z-index: 1;
 }
 section .pokemons__card__details div p {
-  font-size: 0.8125rem;
+  font-size: 1.25rem;
   color: #fff;
   background-color: rgba(255, 255, 255, 0.3);
   padding: 0.3125rem 0.75rem;
   margin-bottom: 0.3125rem;
   border-radius: 15px;
+  z-index: 1;
 }
-@media (min-width: 420px) {
+@media (min-width: 450px) {
   section .pokemons__card__details div p {
-    font-size: 0.75rem;
+    font-size: 1.75rem;
   }
 }
-@media (min-width: 750px) {
+@media (min-width: 1024px) {
   section .pokemons__card__details div p {
     font-size: 1.125rem;
   }
 }
-section .pokemons__card__details img {
-  width: 40%;
+section .pokemons__card__details__poke-img {
+  width: 30%;
+  position: absolute;
+  right: 2.1875rem;
+  bottom: 0.625rem;
+  z-index: 1;
+}
+section .pokemons__card__img {
+  width: 50%;
+  position: absolute;
+  bottom: -1.875rem;
+  right: -1.875rem;
+  opacity: 0.3;
+  transform: rotate(15deg);
 }
 section .pokemons .normal {
   background-color: #A8A878;
@@ -258,7 +194,7 @@ section .pokemons .water {
 section .pokemons .grass {
   background-color: #78C850;
 }
-section .pokemons .eletric {
+section .pokemons .electric {
   background-color: #F8D030;
 }
 section .pokemons .ice {
@@ -299,6 +235,35 @@ section .pokemons .dragon {
 }
 section .pokemons .fairy {
   background-color: #FFAEC9;
+}
+section .pagination {
+  text-align: center;
+  padding-top: 1.875rem;
+}
+section .pagination button {
+  color: white;
+  background-color: rgb(29, 29, 29);
+  padding: 0.9375rem 1.5625rem;
+  border-radius: 0.625rem;
+  border: none;
+}
+section .pagination button:hover {
+  cursor: pointer;
+  transform: translateY(-2px);
+}
+
+footer {
+  text-align: center;
+  padding: 1.25rem 0;
+  background-color: rgb(29, 29, 29);
+  border-radius: 0.625rem 0.625rem 0 0;
+}
+footer p {
+  color: #fff;
+}
+footer a {
+  color: #fff;
+  font-size: 1.25rem;
 }
 
 /*# sourceMappingURL=styles.css.map */
